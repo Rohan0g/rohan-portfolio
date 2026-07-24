@@ -318,9 +318,12 @@ export default function Home() {
                 <div className="absolute bottom-3 left-3 w-2 h-2 border-b-2 border-l-2 border-accent-cyan/60" />
                 <div className="absolute bottom-3 right-3 w-2 h-2 border-b-2 border-r-2 border-accent-cyan/60" />
 
-                <FiCpu className="text-5xl text-accent-cyan mb-3 animate-pulse" />
-                <span className="text-2xl font-black font-display tracking-widest text-white">NEXORITH</span>
-                <span className="text-[10px] font-mono text-accent-gold mt-1 tracking-[0.2em]">[ACTIVE NODE: R_PATTNAIK]</span>
+                <img 
+                  src="/nexorith-logo.png" 
+                  alt="Nexorith IT Solutions Logo" 
+                  className="h-12 w-auto object-contain mb-3 filter drop-shadow-[0_0_12px_rgba(6,182,212,0.6)]" 
+                />
+                <span className="text-[10px] font-mono text-accent-gold tracking-[0.2em]">[ACTIVE NODE: R_PATTNAIK]</span>
                 
                 {/* Embedded holographic data log stream */}
                 <div className="w-full mt-5 bg-black/50 border border-white/10 rounded-lg p-3 font-mono text-[9px] text-green-400/90 leading-relaxed overflow-hidden">
@@ -592,9 +595,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Nexorith Verified Badge */}
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-accent-cyan/10 border border-accent-cyan/20 w-fit">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
+                {/* Nexorith Verified Badge with Logo */}
+                <div className="flex items-center gap-2 px-2.5 py-1 rounded-md bg-accent-cyan/10 border border-accent-cyan/20 w-fit">
+                  <img src="/nexorith-logo.png" alt="Nexorith Logo Icon" className="h-3.5 w-auto object-contain" />
                   <span className="text-[8px] font-mono font-bold tracking-widest text-accent-cyan uppercase">
                     {proj.badge || "NEXORITH IT SOLUTIONS"}
                   </span>
@@ -942,8 +945,12 @@ export default function Home() {
       <footer className="py-12 border-t border-white/5 bg-background text-center relative">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
           
-          {/* Glowing premium dividing line */}
-          <div className="w-48 h-[1px] bg-gradient-to-r from-transparent via-accent-cyan to-transparent mb-8" />
+          {/* Nexorith Logo Image */}
+          <img 
+            src="/nexorith-logo.png" 
+            alt="Nexorith IT Solutions" 
+            className="h-10 w-auto object-contain mb-6 filter drop-shadow-[0_0_10px_rgba(6,182,212,0.4)]" 
+          />
 
           {/* Copyright details */}
           <p className="text-xs font-mono text-white/30 tracking-widest">

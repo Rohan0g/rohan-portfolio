@@ -66,19 +66,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         
         {/* Brand Logo */}
-        <a href="#hero" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8 rounded-lg bg-gradient-to-tr from-accent-blue via-accent-cyan to-accent-purple p-[1px] flex items-center justify-center overflow-hidden">
-            <div className="w-full h-full bg-background rounded-[7px] flex items-center justify-center font-display font-black text-sm group-hover:text-accent-cyan transition-colors">
-              R
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue via-accent-cyan to-accent-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
-          </div>
+        <a href="#hero" className="flex items-center gap-3.5 group">
+          <img 
+            src="/nexorith-logo.png" 
+            alt="Nexorith Logo" 
+            className="h-8 object-contain filter drop-shadow-[0_0_8px_rgba(6,182,212,0.4)] group-hover:scale-105 transition-transform" 
+          />
           <div className="flex flex-col">
             <span className="text-sm font-bold tracking-wider font-display text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent-cyan group-hover:to-accent-blue transition-all duration-300">
               ROHAN PATTNAIK
             </span>
             <span className="text-[9px] font-mono text-accent-cyan tracking-widest leading-none">
-              NEXORITH FOUNDER
+              NEXORITH CO-FOUNDER
             </span>
           </div>
         </a>

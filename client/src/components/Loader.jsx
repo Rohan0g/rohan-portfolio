@@ -88,29 +88,14 @@ export default function Loader({ onComplete }) {
           </svg>
 
           {/* NEXORITH Symbol inside loader */}
-          <div className="flex flex-col items-center justify-center z-10">
-            <span 
-              className="text-4xl font-extrabold tracking-widest font-sans"
-              style={{ 
-                color: '#fff',
-                textShadow: '0 0 20px rgba(6, 182, 212, 0.6)',
-                fontFamily: 'Outfit, Inter, sans-serif',
-              }}
-            >
-              N
-            </span>
-            <div className="w-1.5 h-1.5 rounded-full mt-1" style={{ backgroundColor: '#06B6D4', animation: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite' }} />
+          <div className="flex flex-col items-center justify-center z-10 p-2">
+            <img 
+              src="/nexorith-logo.png" 
+              alt="Nexorith Logo" 
+              className="h-16 w-auto object-contain filter drop-shadow-[0_0_15px_rgba(6,182,212,0.8)]" 
+            />
           </div>
         </div>
-
-        {/* Glowing Text Logo: NEXORITH */}
-        <h2 
-          className="text-2xl font-black tracking-[0.4em] mb-2 glitch-text"
-          data-text="NEXORITH"
-          style={{ color: '#fff', fontFamily: 'Outfit, Inter, sans-serif' }}
-        >
-          NEXORITH
-        </h2>
         
         {/* Subtext */}
         <div className="h-4 flex items-center justify-center">
