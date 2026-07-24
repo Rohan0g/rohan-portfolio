@@ -15,7 +15,7 @@ const lightBg = '#F8FAFC';
 // Header
 doc.rect(0, 0, 595.28, 110).fill(primaryColor);
 doc.fillColor('#FFFFFF').fontSize(24).font('Helvetica-Bold').text('ROHAN PATTNAIK', 40, 30);
-doc.fontSize(12).font('Helvetica').fillColor(accentColor).text('Founder & Full Stack Developer | Nexorith IT Solutions', 40, 58);
+doc.fontSize(12).font('Helvetica').fillColor(accentColor).text('Co-Founder & Full Stack Developer | Nexorith IT Solutions', 40, 58);
 
 doc.fontSize(9).fillColor('#94A3B8').text('Email: the.rohanpattnaik@gmail.com  |  Phone: +91 7684830669  |  Location: Gunupur, Odisha, India', 40, 78);
 doc.text('GitHub: github.com/Rohan0g  |  LinkedIn: linkedin.com/in/rohan-pattnaik-0112a11a2', 40, 92);
@@ -31,7 +31,7 @@ function addSectionHeader(title) {
 // Career Objective
 addSectionHeader('CAREER OBJECTIVE');
 doc.fillColor(textColor).fontSize(9.5).font('Helvetica').text(
-  'Dedicated Full Stack Developer and Founder of Nexorith IT Solutions. Completed BCA (7.27 CGPA) and pursuing MCA at GIET University. Passionate about building real-world enterprise software, ERP systems, SaaS platforms, and scalable web solutions while driving technological innovation and business growth.',
+  'Dedicated Full Stack Developer and Co-Founder of Nexorith IT Solutions. Completed BCA (7.27 CGPA) and pursuing MCA at GIET University. Passionate about building real-world enterprise software, ERP systems, SaaS platforms, and scalable web solutions while driving technological innovation and business growth.',
   40, y, { width: 515, align: 'justify' }
 );
 y += 45;
@@ -89,7 +89,7 @@ y += 10;
 // Experience & Soft Skills
 addSectionHeader('EXPERIENCE & LEADERSHIP');
 const exp = [
-  'Founder & Developer — Nexorith IT Solutions (Freelance & Client Projects)',
+  'Co-Founder & Developer — Nexorith IT Solutions (Freelance & Client Projects)',
   'Web Development Intern — Y Hills',
   'Head Office Bearer — CSA Department (2022 - 2025)',
   'Languages: English (Professional), Hindi (Professional), Odia (Native)'

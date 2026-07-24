@@ -235,7 +235,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 1.7 }}
               className="text-lg md:text-2xl font-bold font-display text-white/80 mb-6 tracking-wide"
             >
-              FULL STACK DEVELOPER <span className="text-accent-gold">•</span> FOUNDER OF NEXORITH IT SOLUTIONS
+              FULL STACK DEVELOPER <span className="text-accent-gold">•</span> CO-FOUNDER OF NEXORITH IT SOLUTIONS
             </motion.div>
 
             {/* Detailed description */}
@@ -826,7 +826,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-4 text-white/80">
                 <span className="text-accent-cyan text-lg font-bold">@</span>
-                <span>Gunupur, India</span>
+                <span>Gunupur, Odisha, India</span>
               </div>
             </div>
 

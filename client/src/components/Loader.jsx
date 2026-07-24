@@ -156,7 +156,7 @@ export default function Loader({ onComplete }) {
 
         {/* Micro details */}
         <div className="mt-16 flex items-center gap-6 text-[9px] tracking-wider" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'monospace' }}>
-          <span>LOC: IN_DELHI_NCR</span>
+          <span>LOC: GUNUPUR_ODISHA</span>
           <span>VER: 2.0.7</span>
           <span>PING: 14MS</span>
         </div>
