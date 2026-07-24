@@ -594,8 +594,13 @@ export default function Home() {
                   <span className="text-[9px] font-mono font-bold bg-white/5 text-white/60 border border-white/10 px-2.5 py-1 rounded-full uppercase tracking-widest">
                     {proj.category}
                   </span>
-                  <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-lg">
-                    {proj.icon}
+                  <div 
+                    className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg"
+                    style={{ '--glow': proj.bgGlow }}
+                  >
+                    <span className="transition-all duration-500 group-hover:drop-shadow-[0_0_8px_currentColor]">
+                      {proj.icon}
+                    </span>
                   </div>
                 </div>
 
