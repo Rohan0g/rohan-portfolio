@@ -1,9 +1,9 @@
-import React, { useRef, useMemo, useEffect } from 'react';
+import React, { useRef, useMemo, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
 // 🌌 3D MILKY WAY SPIRAL GALAXY COMPONENT
-function MilkyWayGalaxy() {
+function MilkyWayGalaxy({ isMobile }) {
   const pointsRef = useRef();
   const bgStarsRef = useRef();
 
@@ -14,18 +14,28 @@ function MilkyWayGalaxy() {
       mouse.current.targetX = (e.clientX / window.innerWidth - 0.5) * 0.4;
       mouse.current.targetY = (e.clientY / window.innerHeight - 0.5) * 0.4;
     };
+    const handleTouchMove = (e) => {
+      if (e.touches && e.touches[0]) {
+        mouse.current.targetX = (e.touches[0].clientX / window.innerWidth - 0.5) * 0.5;
+        mouse.current.targetY = (e.touches[0].clientY / window.innerHeight - 0.5) * 0.5;
+      }
+    };
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
   }, []);
 
   // Generate 3D Milky Way Galaxy Spiral Arms
   const { positions, colors } = useMemo(() => {
-    const count = 12000;
+    const count = isMobile ? 8000 : 12000;
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
 
     const branches = 4;
-    const radius = 24;
+    const radius = isMobile ? 22 : 24;
     const spin = 1.4;
 
     const colorCore = new THREE.Color('#FFF5EA');
@@ -67,10 +77,10 @@ function MilkyWayGalaxy() {
     }
 
     return { positions, colors };
-  }, []);
+  }, [isMobile]);
 
   const bgStarsPositions = useMemo(() => {
-    const count = 3500;
+    const count = isMobile ? 2000 : 3500;
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       const r = 35 + Math.random() * 45;
@@ -82,14 +92,14 @@ function MilkyWayGalaxy() {
       arr[i * 3 + 2] = r * Math.cos(phi);
     }
     return arr;
-  }, []);
+  }, [isMobile]);
 
   useFrame((state, delta) => {
     if (pointsRef.current) {
-      pointsRef.current.rotation.y += delta * 0.03;
+      pointsRef.current.rotation.y += delta * 0.04;
     }
     if (bgStarsRef.current) {
-      bgStarsRef.current.rotation.y -= delta * 0.006;
+      bgStarsRef.current.rotation.y -= delta * 0.008;
     }
 
     mouse.current.x += (mouse.current.targetX - mouse.current.x) * 0.05;
@@ -113,10 +123,10 @@ function MilkyWayGalaxy() {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.06}
+          size={isMobile ? 0.12 : 0.06}
           color="#CBD5E1"
           transparent
-          opacity={0.6}
+          opacity={0.7}
           sizeAttenuation
           depthWrite={false}
         />
@@ -138,10 +148,10 @@ function MilkyWayGalaxy() {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.11}
+          size={isMobile ? 0.22 : 0.11}
           vertexColors
           transparent
-          opacity={0.8}
+          opacity={0.88}
           sizeAttenuation
           depthWrite={false}
           blending={THREE.AdditiveBlending}
@@ -152,22 +162,31 @@ function MilkyWayGalaxy() {
 }
 
 export default function ThreeBackground() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div className="fixed inset-0 -z-10 bg-[#030712] pointer-events-none overflow-hidden">
       {/* Soft gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/60 via-[#030712]/40 to-[#030712]/80 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/50 via-[#030712]/30 to-[#030712]/75 z-[1]" />
       
       {/* Subtle tech grid background */}
       <div className="absolute inset-0 tech-grid opacity-[0.08] z-[0]" />
 
       <Canvas
-        camera={{ position: [0, 0, 24], fov: 60 }}
-        dpr={[1, 1.5]}
-        gl={{ powerPreference: "high-performance", antialias: false, precision: "mediump" }}
+        camera={{ position: [0, 0, isMobile ? 32 : 24], fov: isMobile ? 65 : 60 }}
+        dpr={isMobile ? [1, 2] : [1, 1.5]}
+        gl={{ powerPreference: "high-performance", antialias: false }}
         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
       >
-        <ambientLight intensity={0.8} />
-        <MilkyWayGalaxy />
+        <ambientLight intensity={0.9} />
+        <MilkyWayGalaxy isMobile={isMobile} />
       </Canvas>
     </div>
   );
