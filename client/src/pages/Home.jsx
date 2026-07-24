@@ -170,8 +170,10 @@ export default function Home() {
     e.preventDefault();
     setFormStatus('sending');
     try {
-      // Always send to live Render API endpoint
-      const API_URL = 'https://rohan-portfolio-mi89.onrender.com/api/contact';
+      // Route to local server when testing on localhost, and Render when live
+      const API_URL = window.location.hostname === 'localhost' 
+        ? 'http://localhost:5005/api/contact' 
+        : 'https://rohan-portfolio-mi89.onrender.com/api/contact';
 
       const res = await fetch(API_URL, {
         method: 'POST',
