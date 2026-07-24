@@ -74,10 +74,15 @@ app.post('/api/contact', async (req, res) => {
 
     if (emailSender && emailPass) {
       const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true, // SSL
         auth: {
           user: emailSender,
           pass: emailPass
+        },
+        tls: {
+          rejectUnauthorized: false
         }
       });
 
