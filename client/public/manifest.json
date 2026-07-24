@@ -1,0 +1,26 @@
+{
+  "name": "Rohan Pattnaik — Full Stack Developer & Founder",
+  "short_name": "Rohan Pattnaik",
+  "description": "Premium Full Stack Developer & AI Software Engineer. Founder of Nexorith IT Solutions. Building high-performance ERP systems, SaaS platforms, and digital experiences.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#030712",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "developer tools"],
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+# Rohan Pattnaik Portfolio — Crawler Directives
+# https://rohanpattnaik.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /node_modules/
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Social Media Crawlers
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemap
+Sitemap: https://rohanpattnaik.com/sitemap.xml
+
+# Host
+Host: https://rohanpattnaik.com
