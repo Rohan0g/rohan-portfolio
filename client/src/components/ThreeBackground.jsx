@@ -154,20 +154,21 @@ function MilkyWayGalaxy() {
 export default function ThreeBackground() {
   return (
     <div className="fixed inset-0 -z-10 bg-[#030712] pointer-events-none overflow-hidden">
-      {/* Soft gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/60 via-[#030712]/40 to-[#030712]/80 z-[1]" />
-      
       {/* Subtle tech grid background */}
       <div className="absolute inset-0 tech-grid opacity-[0.08] z-[0]" />
 
+      {/* 3D Galaxy Canvas - MUST be above tech grid */}
       <Canvas
         camera={{ position: [0, 0, 24], fov: 60 }}
         gl={{ powerPreference: "high-performance", antialias: true }}
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1 }}
       >
         <ambientLight intensity={0.8} />
         <MilkyWayGalaxy />
       </Canvas>
+
+      {/* Very subtle gradient overlay for text readability - must NOT hide stars */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/30 via-transparent to-[#030712]/50 z-[2]" />
     </div>
   );
 }
