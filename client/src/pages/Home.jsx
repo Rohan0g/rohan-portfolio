@@ -843,7 +843,7 @@ export default function Home() {
             <div className="space-y-6 text-sm font-mono">
               <div className="flex items-center gap-4 text-white/80">
                 <FiMail className="text-accent-cyan text-lg" />
-                <span>the.rohanpatnaik@gmail.com</span>
+                <span>rohanpatnaik888.rox@gmail.com</span>
               </div>
               <div className="flex items-center gap-4 text-white/80">
                 <FiPhone className="text-accent-cyan text-lg" />

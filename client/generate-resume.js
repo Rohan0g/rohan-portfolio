@@ -17,7 +17,7 @@ doc.rect(0, 0, 595.28, 110).fill(primaryColor);
 doc.fillColor('#FFFFFF').fontSize(24).font('Helvetica-Bold').text('ROHAN PATTNAIK', 40, 30);
 doc.fontSize(12).font('Helvetica').fillColor(accentColor).text('Co-Founder & Full Stack Developer | Nexorith IT Solutions', 40, 58);
 
-doc.fontSize(9).fillColor('#94A3B8').text('Email: the.rohanpattnaik@gmail.com  |  Phone: +91 7684830669  |  Location: Gunupur, Odisha, India', 40, 78);
+doc.fontSize(9).fillColor('#94A3B8').text('Email: rohanpatnaik888.rox@gmail.com  |  Phone: +91 7684830669  |  Location: Gunupur, Odisha, India', 40, 78);
 doc.text('GitHub: github.com/Rohan0g  |  LinkedIn: linkedin.com/in/rohan-pattnaik-0112a11a2', 40, 92);
 
 let y = 130;

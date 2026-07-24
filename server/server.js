@@ -67,8 +67,8 @@ app.post('/api/contact', async (req, res) => {
       console.log('💾 [Fallback Memory] Saved message in memory store.');
     }
 
-    // Email Notification Alert System to Rohan Pattnaik (the.rohanpattnaik@gmail.com)
-    const receiverEmail = process.env.NOTIFICATION_EMAIL || 'the.rohanpattnaik@gmail.com';
+    // Email Notification Alert System to Rohan Pattnaik (rohanpatnaik888.rox@gmail.com)
+    const receiverEmail = process.env.NOTIFICATION_EMAIL || 'rohanpatnaik888.rox@gmail.com';
     const emailSender = process.env.EMAIL_USER;
     const emailPass = process.env.EMAIL_PASS;
 
