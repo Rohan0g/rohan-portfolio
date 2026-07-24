@@ -170,8 +170,12 @@ export default function Home() {
     e.preventDefault();
     setFormStatus('sending');
     try {
-      // Direct call to our Node API
-      const res = await fetch('http://localhost:5005/api/contact', {
+      // Live call to deployed Render Express API (with fallback)
+      const API_URL = window.location.hostname === 'localhost' 
+        ? 'http://localhost:5005/api/contact' 
+        : 'https://rohan-portfolio-mi89.onrender.com/api/contact';
+
+      const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
