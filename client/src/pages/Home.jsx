@@ -304,23 +304,25 @@ export default function Home() {
               transition={{ duration: 1, delay: 1.8 }}
               className="relative w-80 h-80 md:w-96 md:h-96 flex items-center justify-center"
             >
-              {/* Spinning tech orbits */}
-              <div className="absolute inset-0 rounded-full border border-dashed border-white/5 animate-[spin_40s_linear_infinite]" />
-              <div className="absolute inset-6 rounded-full border border-double border-accent-cyan/10 animate-[spin_25s_linear_infinite_reverse]" />
-              
-              {/* Rotating inner glass platform */}
-              <div className="absolute w-[80%] h-[80%] rounded-full bg-gradient-to-tr from-accent-blue/10 to-accent-purple/10 border border-white/10 backdrop-blur-xl flex flex-col items-center justify-center p-6 shadow-premium">
-                <FiCpu className="text-6xl text-accent-cyan mb-4 animate-pulse" />
+              {/* Futuristic Glass Command Center Card */}
+              <div className="w-full h-full rounded-2xl bg-gradient-to-tr from-surface/80 via-white/[0.03] to-accent-cyan/10 border border-white/10 backdrop-blur-2xl flex flex-col items-center justify-center p-8 shadow-2xl relative overflow-hidden group">
+                {/* Micro tech corners */}
+                <div className="absolute top-3 left-3 w-2 h-2 border-t-2 border-l-2 border-accent-cyan/60" />
+                <div className="absolute top-3 right-3 w-2 h-2 border-t-2 border-r-2 border-accent-cyan/60" />
+                <div className="absolute bottom-3 left-3 w-2 h-2 border-b-2 border-l-2 border-accent-cyan/60" />
+                <div className="absolute bottom-3 right-3 w-2 h-2 border-b-2 border-r-2 border-accent-cyan/60" />
+
+                <FiCpu className="text-5xl text-accent-cyan mb-3 animate-pulse" />
                 <span className="text-2xl font-black font-display tracking-widest text-white">NEXORITH</span>
-                <span className="text-[10px] font-mono text-accent-gold mt-2 tracking-[0.2em]">[ACTIVE NODE: R_PATTNAIK]</span>
+                <span className="text-[10px] font-mono text-accent-gold mt-1 tracking-[0.2em]">[ACTIVE NODE: R_PATTNAIK]</span>
                 
                 {/* Embedded holographic data log stream */}
-                <div className="w-full mt-6 bg-black/40 border border-white/5 rounded p-3 font-mono text-[8px] text-green-400/80 leading-normal max-h-24 overflow-hidden">
+                <div className="w-full mt-5 bg-black/50 border border-white/10 rounded-lg p-3 font-mono text-[9px] text-green-400/90 leading-relaxed overflow-hidden">
                   <div className="animate-pulse">&gt; SYS_BOOT_READY: SECURE</div>
-                  <div>&gt; HOST: PORTFOLIO_V2.0.7</div>
-                  <div>&gt; RENDER: 3D_WORLD_NODE</div>
-                  <div>&gt; CLIENT_METRIC: OK_Lighthouse_100</div>
-                  <div>&gt; STATUS: STANDBY</div>
+                  <div>&gt; MILKY_WAY_GALAXY: ACTIVE</div>
+                  <div>&gt; RENDER: THREE_JS_3D_WORLD</div>
+                  <div>&gt; CO_FOUNDER: ROHAN_PATTNAIK</div>
+                  <div>&gt; STATUS: STANDBY_FOR_PROJECTS</div>
                 </div>
               </div>
 
