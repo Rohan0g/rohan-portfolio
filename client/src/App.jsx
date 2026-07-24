@@ -5,6 +5,7 @@ import Loader from './components/Loader';
 import CustomCursor from './components/CustomCursor';
 import ThreeBackground from './components/ThreeBackground';
 import Navbar from './components/Navbar';
+import CommandPalette from './components/CommandPalette';
 import Home from './pages/Home';
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
     <Router>
       {/* Interactive custom liquid cursor */}
       <CustomCursor />
+
+      {/* Futuristic Command Palette (CMD + K) */}
+      <CommandPalette />
 
       {/* Intro Preloader screen — overlays everything */}
       {loading && <Loader onComplete={handleLoaderComplete} />}
