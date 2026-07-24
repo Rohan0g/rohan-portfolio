@@ -73,10 +73,11 @@ y += 10;
 // Projects
 addSectionHeader('KEY PROJECTS');
 const projects = [
-  ['Nexorith IT Solutions Suite', 'Custom ERP, Store Management, Event Management & Travel Software for Clients.'],
-  ['Dr.PATH (Major Project)', 'Doctor Appointment & Healthcare Management System.'],
-  ['Health Qure+ (Smart India Hackathon)', 'Healthcare solution developed for national level hackathon.'],
-  ['BUSiFY (Minor Project)', 'Online Bus Seat Reservation & Ticketing Management System.']
+  ['APEX — Industrial ERP System', 'Industrial-level ERP management system engineered for multi-plant operations & supply chain.'],
+  ['CITADEL — Hotel Management System', 'Luxury hotel & resort management suite automating room matrix, POS billing & guest portal.'],
+  ['ORBIT — Department Management System', 'Unified departmental operations management platform streamlining inter-department tasks & assets.'],
+  ['POWERHOUSE GOD MODE BILLING', 'High-speed GST billing & POS platform built for enterprise distribution.'],
+  ['Dr.PATH & Health Qure+', 'Doctor Appointment System & Smart India Hackathon healthcare management project.']
 ];
 
 projects.forEach(([name, desc]) => {

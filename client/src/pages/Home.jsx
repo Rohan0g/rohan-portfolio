@@ -69,58 +69,64 @@ export default function Home() {
   // Projects list
   const projects = [
     {
-      title: "Industrial ERP Solution",
-      category: "Enterprise System",
+      title: "APEX: Industrial ERP System",
+      category: "Enterprise ERP",
+      badge: "NEXORITH ENTERPRISE",
       icon: <FaBuilding className="text-accent-blue" />,
-      impact: "Streamlined operational efficiency by 40% for large manufacturing clients.",
-      features: ["Inventory Matrix", "Supply Chain Ledger", "Automated Payroll Engine", "Audit Compliance Log"],
+      impact: "Industrial-level ERP management system engineered for high-scale factory operations and multi-plant supply chain control.",
+      features: ["Multi-Plant Supply Chain", "Automated Payroll Engine", "Realtime Inventory Matrix", "Compliance & Audit Logs"],
       stack: ["React", "Node.js", "Express", "MongoDB", "Tailwind"],
-      bgGlow: "rgba(59, 130, 246, 0.15)",
+      bgGlow: "rgba(59, 130, 246, 0.2)",
     },
     {
-      title: "Hotel Management Suite",
+      title: "CITADEL: Hotel Management System",
       category: "Hospitality SaaS",
+      badge: "NEXORITH PRODUCTION",
       icon: <FaHospital className="text-accent-cyan" />,
-      impact: "Automated booking systems for multi-chain luxury resorts.",
-      features: ["Live Room Mapping", "Direct Check-In Portal", "POS Billing Integrations", "Housekeeping Matrix"],
+      impact: "Complete luxury hotel management system automating bookings, room matrix, guest POS billing, and staff ops.",
+      features: ["Live Room Reservation Grid", "Instant POS Billing Engine", "Housekeeping Dispatch", "Guest Analytics Dashboard"],
       stack: ["React", "Express", "Node.js", "MongoDB", "Redux"],
-      bgGlow: "rgba(6, 182, 212, 0.15)",
+      bgGlow: "rgba(6, 182, 212, 0.2)",
     },
     {
-      title: "POWERHOUSE GOD MODE BILLING SOFTWARE",
-      category: "Finance / SaaS",
-      icon: <FiActivity className="text-accent-purple" />,
-      impact: "Processes $12M+ transactions yearly with zero downtime.",
-      features: ["GST Compliant Invoice Generator", "Dynamic Payment Splitting", "PDF Export Engine", "Realtime Analytics Dashboard"],
+      title: "ORBIT: Department Management System",
+      category: "Enterprise Workflow",
+      badge: "NEXORITH CORE",
+      icon: <FiLayers className="text-accent-purple" />,
+      impact: "Unified departmental operations management platform streamlining inter-department tasks, assets, and approvals.",
+      features: ["Intra-Department Task Matrix", "Asset Allocation Ledger", "Role-Based Access Control", "Performance Analytics"],
       stack: ["React", "Node.js", "Express", "MongoDB", "Tailwind"],
-      bgGlow: "rgba(124, 58, 237, 0.15)",
+      bgGlow: "rgba(124, 58, 237, 0.2)",
     },
     {
-      title: "School ERP Ecosystem",
-      category: "EdTech Platform",
-      icon: <FaSchool className="text-accent-gold" />,
-      impact: "Connecting over 10,000+ students and teachers across India.",
+      title: "POWERHOUSE GOD MODE BILLING PLATFORM",
+      category: "Finance / SaaS",
+      badge: "NEXORITH FINTECH",
+      icon: <FiActivity className="text-accent-gold" />,
+      impact: "High-speed GST billing & POS system built for retail chains and enterprise distribution.",
+      features: ["GST Invoice Generator", "Payment Split Gateway", "Instant PDF Stream", "Realtime Revenue Analytics"],
+      stack: ["React", "Node.js", "Express", "MongoDB", "Tailwind"],
+      bgGlow: "rgba(255, 215, 0, 0.2)",
+    },
+    {
+      title: "SCHOOL ERP ECOSYSTEM",
+      category: "EdTech SaaS",
+      badge: "NEXORITH EDTECH",
+      icon: <FaSchool className="text-emerald-400" />,
+      impact: "Comprehensive educational institution ERP connecting thousands of students, teachers, and parents.",
       features: ["Fee Reconciliation Engine", "Digital Report Cards", "Attendance Geo-Tracking", "Parent Portal App"],
       stack: ["React", "Node.js", "Express", "MongoDB", "Tailwind"],
-      bgGlow: "rgba(255, 215, 0, 0.15)",
+      bgGlow: "rgba(16, 185, 129, 0.2)",
     },
     {
-      title: "AI Business Strategy Platform",
-      category: "Artificial Intelligence",
+      title: "HEALTH QURE+ (SIH Hackathon Winner)",
+      category: "Healthcare AI",
+      badge: "NEXORITH HACKATHON",
       icon: <FiCpu className="text-red-500" />,
-      impact: "Generated 50,000+ structured marketing and strategy reports.",
-      features: ["Neural Strategy Generator", "Competitor Data Scraper", "SaaS Valuation Model", "AI Agent Integrations"],
+      impact: "Smart hospital triage and outpatient management suite built for national hackathons.",
+      features: ["OPD Queue Manager", "Electronic Health Records", "Doctor Slot Allocation", "AI Triage System"],
       stack: ["React", "Three.js", "Node.js", "Express", "OpenAI API"],
-      bgGlow: "rgba(239, 68, 68, 0.15)",
-    },
-    {
-      title: "Temple Donation Ledger",
-      category: "Charity FinTech",
-      icon: <FaGlobe className="text-emerald-500" />,
-      impact: "Secure cloud ledger tracking global donations safely.",
-      features: ["Secured Payment Gateway", "Instant Tax Receipt PDFs", "Audit-Ready Ledger", "SMS Gateway Integration"],
-      stack: ["React", "Node.js", "Express", "MongoDB", "Tailwind"],
-      bgGlow: "rgba(16, 185, 129, 0.15)",
+      bgGlow: "rgba(239, 68, 68, 0.2)",
     }
   ];
 
@@ -576,12 +582,22 @@ export default function Home() {
               />
 
               {/* Project Card Header */}
-              <div className="p-6 pb-0 flex items-center justify-between">
-                <span className="text-[9px] font-mono font-bold bg-white/5 text-white/60 border border-white/10 px-2.5 py-1 rounded-full uppercase tracking-widest">
-                  {proj.category}
-                </span>
-                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-lg">
-                  {proj.icon}
+              <div className="p-6 pb-0 flex flex-col gap-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-[9px] font-mono font-bold bg-white/5 text-white/60 border border-white/10 px-2.5 py-1 rounded-full uppercase tracking-widest">
+                    {proj.category}
+                  </span>
+                  <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-lg">
+                    {proj.icon}
+                  </div>
+                </div>
+
+                {/* Nexorith Verified Badge */}
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-accent-cyan/10 border border-accent-cyan/20 w-fit">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
+                  <span className="text-[8px] font-mono font-bold tracking-widest text-accent-cyan uppercase">
+                    {proj.badge || "NEXORITH IT SOLUTIONS"}
+                  </span>
                 </div>
               </div>
 
