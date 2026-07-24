@@ -57,11 +57,11 @@ export default function CommandPalette() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.5 }}
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 left-6 z-[999] px-3.5 py-2 rounded-full bg-surface/80 border border-white/15 backdrop-blur-xl text-[10px] font-mono text-white/70 hover:text-white hover:border-accent-cyan flex items-center gap-2 shadow-2xl transition-all group cursor-pointer"
+        className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[999] px-3.5 py-2.5 rounded-full bg-surface/90 border border-white/15 backdrop-blur-xl text-[10px] font-mono text-white/70 hover:text-white hover:border-accent-cyan flex items-center gap-2 shadow-2xl transition-all group cursor-pointer min-h-[48px]"
       >
-        <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse" />
-        <span className="tracking-widest uppercase">COMMAND MATRIX</span>
-        <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-[9px] font-bold text-accent-cyan border border-white/10 group-hover:bg-accent-cyan group-hover:text-black transition-colors">
+        <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse shrink-0" />
+        <span className="tracking-widest uppercase hidden xs:inline">COMMAND MATRIX</span>
+        <kbd className="px-2 py-1 rounded bg-white/10 text-[9px] font-bold text-accent-cyan border border-white/10 group-hover:bg-accent-cyan group-hover:text-black transition-colors">
           ⌘K
         </kbd>
       </motion.button>

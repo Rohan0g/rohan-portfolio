@@ -263,11 +263,11 @@ export default function Home() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 2.1 }}
-              className="flex flex-wrap items-center gap-4 w-full"
+              className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5 sm:gap-4 w-full"
             >
               <a 
                 href="#projects" 
-                className="group relative px-8 py-3.5 rounded-full overflow-hidden flex items-center gap-3 text-xs font-bold bg-gradient-to-r from-accent-blue to-accent-cyan text-white shadow-glow-cyan hover:scale-[1.02] transition-transform"
+                className="group relative px-8 py-3.5 rounded-full overflow-hidden flex items-center justify-center gap-3 text-xs font-bold bg-gradient-to-r from-accent-blue to-accent-cyan text-white shadow-glow-cyan hover:scale-[1.02] transition-transform min-h-[48px] text-center"
               >
                 <span>EXPLORE WORK</span>
                 <FiArrowRight className="group-hover:translate-x-1.5 transition-transform" />
@@ -275,16 +275,16 @@ export default function Home() {
               
               <a 
                 href="#contact" 
-                className="px-8 py-3.5 rounded-full text-xs font-bold border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-white/80 hover:text-white"
+                className="px-8 py-3.5 rounded-full text-xs font-bold border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-white/80 hover:text-white min-h-[48px] flex items-center justify-center text-center"
               >
                 BOOK A BRIEFING
               </a>
 
-              {/* Resume download or resume trigger */}
+              {/* Resume download */}
               <a 
                 href="/resume.pdf"
                 download
-                className="px-6 py-3.5 rounded-full text-xs font-semibold text-white/40 hover:text-accent-gold hover:bg-white/5 transition-colors font-mono"
+                className="px-6 py-3.5 rounded-full text-xs font-semibold text-white/50 hover:text-accent-gold hover:bg-white/5 transition-colors font-mono min-h-[48px] flex items-center justify-center text-center border border-white/5 sm:border-none"
               >
                 [DOWNLOAD CV]
               </a>
@@ -307,12 +307,12 @@ export default function Home() {
           </div>
 
           {/* Right Column: AI Hologram / Floating Dev Environment */}
-          <div className="lg:col-span-5 flex justify-center items-center relative">
+          <div className="lg:col-span-5 flex justify-center items-center relative mt-6 lg:mt-0">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, delay: 1.8 }}
-              className="relative w-80 h-80 md:w-96 md:h-96 flex items-center justify-center"
+              className="relative w-full max-w-[300px] xs:max-w-[340px] sm:w-80 sm:h-80 md:w-96 md:h-96 aspect-square flex items-center justify-center mx-auto"
             >
               {/* Futuristic Glass Command Center Card */}
               <div className="w-full h-full rounded-2xl bg-gradient-to-tr from-surface/80 via-white/[0.03] to-accent-cyan/10 border border-white/10 backdrop-blur-2xl flex flex-col items-center justify-center p-8 shadow-2xl relative overflow-hidden group">
@@ -865,10 +865,10 @@ export default function Home() {
           </div>
 
           {/* Right Contact Form Column */}
-          <div className="lg:col-span-7">
-            <form onSubmit={handleContactSubmit} className="glass-panel p-8 rounded-2xl border border-white/10 space-y-6">
+          <div className="lg:col-span-7 w-full">
+            <form onSubmit={handleContactSubmit} className="glass-panel p-5 sm:p-8 rounded-2xl border border-white/10 space-y-5 sm:space-y-6">
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                 <div>
                   <label className="block text-[10px] font-mono tracking-widest text-white/40 uppercase mb-2">Your Name</label>
                   <input 
@@ -877,7 +877,7 @@ export default function Home() {
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                     placeholder="Enter name"
-                    className="w-full bg-white/5 border border-white/5 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-accent-cyan focus:bg-white/[0.08] transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-accent-cyan focus:bg-white/[0.08] transition-all min-h-[48px]"
                   />
                 </div>
                 <div>
@@ -888,7 +888,7 @@ export default function Home() {
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     placeholder="name@domain.com"
-                    className="w-full bg-white/5 border border-white/5 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-accent-cyan focus:bg-white/[0.08] transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-accent-cyan focus:bg-white/[0.08] transition-all min-h-[48px]"
                   />
                 </div>
               </div>
@@ -901,19 +901,19 @@ export default function Home() {
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                   placeholder="Outline your project blueprint or integration needs..."
-                  className="w-full bg-white/5 border border-white/5 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-accent-cyan focus:bg-white/[0.08] transition-all resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-accent-cyan focus:bg-white/[0.08] transition-all resize-none"
                 />
               </div>
 
               <button 
                 type="submit" 
                 disabled={formStatus === 'sending'}
-                className="w-full group px-6 py-4 rounded-xl flex items-center justify-center gap-3 text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-purple text-white hover:scale-[1.01] active:scale-100 transition-all cursor-pointer shadow-glow-cyan"
+                className="w-full group px-6 py-4 rounded-xl flex items-center justify-center gap-3 text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-purple text-white hover:scale-[1.01] active:scale-100 transition-all cursor-pointer shadow-glow-cyan min-h-[52px]"
               >
                 <span>
                   {formStatus === 'sending' ? 'TRANSMITTING...' : 'TRANSMIT ENCRYPTED QUERY'}
                 </span>
-                <FiSend className="group-hover:translate-x-1.5 transition-transform" />
+                <FiSend className="group-hover:translate-x-1.5 transition-transform text-sm shrink-0" />
               </button>
 
               <AnimatePresence>

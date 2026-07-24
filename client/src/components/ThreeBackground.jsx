@@ -162,7 +162,8 @@ export default function ThreeBackground() {
 
       <Canvas
         camera={{ position: [0, 0, 24], fov: 60 }}
-        gl={{ powerPreference: "high-performance", antialias: true }}
+        dpr={[1, 1.5]}
+        gl={{ powerPreference: "high-performance", antialias: false, precision: "mediump" }}
         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
       >
         <ambientLight intensity={0.8} />
