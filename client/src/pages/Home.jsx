@@ -72,6 +72,7 @@ export default function Home() {
       title: "APEX: Industrial ERP System",
       category: "Enterprise ERP",
       badge: "NEXORITH ENTERPRISE",
+      image: "/projects/apex-banner.jpg",
       icon: <FaBuilding className="text-accent-blue" />,
       impact: "Industrial-level ERP management system engineered for high-scale factory operations and multi-plant supply chain control.",
       features: ["Multi-Plant Supply Chain", "Automated Payroll Engine", "Realtime Inventory Matrix", "Compliance & Audit Logs"],
@@ -82,6 +83,7 @@ export default function Home() {
       title: "CITADEL: Hotel Management System",
       category: "Hospitality SaaS",
       badge: "NEXORITH PRODUCTION",
+      image: "/projects/citadel-banner.jpg",
       icon: <FaHospital className="text-accent-cyan" />,
       impact: "Complete luxury hotel management system automating bookings, room matrix, guest POS billing, and staff ops.",
       features: ["Live Room Reservation Grid", "Instant POS Billing Engine", "Housekeeping Dispatch", "Guest Analytics Dashboard"],
@@ -92,6 +94,7 @@ export default function Home() {
       title: "ORBIT: Department Management System",
       category: "Enterprise Workflow",
       badge: "NEXORITH CORE",
+      image: "/projects/orbit-banner.jpg",
       icon: <FiLayers className="text-accent-purple" />,
       impact: "Unified departmental operations management platform streamlining inter-department tasks, assets, and approvals.",
       features: ["Intra-Department Task Matrix", "Asset Allocation Ledger", "Role-Based Access Control", "Performance Analytics"],
@@ -102,6 +105,7 @@ export default function Home() {
       title: "POWERHOUSE GOD MODE BILLING PLATFORM",
       category: "Finance / SaaS",
       badge: "NEXORITH FINTECH",
+      image: "/projects/powerhouse-banner.jpg",
       icon: <FiActivity className="text-accent-gold" />,
       impact: "High-speed GST billing & POS system built for retail chains and enterprise distribution.",
       features: ["GST Invoice Generator", "Payment Split Gateway", "Instant PDF Stream", "Realtime Revenue Analytics"],
@@ -588,21 +592,50 @@ export default function Home() {
                 style={{ background: `radial-gradient(circle at 50% 20%, ${proj.bgGlow}, transparent 55%)` }}
               />
 
-              {/* Project Card Header */}
-              <div className="p-6 pb-0 flex flex-col gap-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-[9px] font-mono font-bold bg-white/5 text-white/60 border border-white/10 px-2.5 py-1 rounded-full uppercase tracking-widest">
-                    {proj.category}
-                  </span>
-                  <div 
-                    className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg"
-                    style={{ '--glow': proj.bgGlow }}
-                  >
-                    <span className="transition-all duration-500 group-hover:drop-shadow-[0_0_8px_currentColor]">
-                      {proj.icon}
+              {/* Project Card Banner Image */}
+              {proj.image && (
+                <div className="relative w-full h-44 sm:h-48 overflow-hidden bg-black/80 border-b border-white/10">
+                  <img 
+                    src={proj.image} 
+                    alt={proj.title} 
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-black/30 to-transparent" />
+                  
+                  {/* Floating Badges on Banner */}
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                    <span className="text-[9px] font-mono font-bold bg-black/60 backdrop-blur-md text-white/80 border border-white/15 px-2.5 py-1 rounded-full uppercase tracking-widest">
+                      {proj.category}
                     </span>
+                    <div 
+                      className="w-8 h-8 rounded-lg bg-black/60 backdrop-blur-md border border-white/15 flex items-center justify-center text-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg"
+                      style={{ '--glow': proj.bgGlow }}
+                    >
+                      <span className="transition-all duration-500 group-hover:drop-shadow-[0_0_8px_currentColor]">
+                        {proj.icon}
+                      </span>
+                    </div>
                   </div>
                 </div>
+              )}
+
+              {/* Project Card Header (for non-image cards or meta section) */}
+              <div className="p-6 pb-0 flex flex-col gap-3">
+                {!proj.image && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-[9px] font-mono font-bold bg-white/5 text-white/60 border border-white/10 px-2.5 py-1 rounded-full uppercase tracking-widest">
+                      {proj.category}
+                    </span>
+                    <div 
+                      className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg"
+                      style={{ '--glow': proj.bgGlow }}
+                    >
+                      <span className="transition-all duration-500 group-hover:drop-shadow-[0_0_8px_currentColor]">
+                        {proj.icon}
+                      </span>
+                    </div>
+                  </div>
+                )}
 
                 {/* Nexorith Verified Badge with Logo */}
                 <div className="flex items-center gap-2 px-2.5 py-1 rounded-md bg-accent-cyan/10 border border-accent-cyan/20 w-fit">
