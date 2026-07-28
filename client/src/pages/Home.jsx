@@ -594,21 +594,21 @@ export default function Home() {
 
               {/* Project Card Banner Image */}
               {proj.image && (
-                <div className="relative w-full h-44 sm:h-48 overflow-hidden bg-black/80 border-b border-white/10">
+                <div className="relative w-full aspect-[2.6/1] sm:aspect-[2.8/1] overflow-hidden bg-[#02050e] flex items-center justify-center p-3 border-b border-white/10">
                   <img 
                     src={proj.image} 
                     alt={proj.title} 
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-700 ease-out drop-shadow-2xl"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/40 via-transparent to-transparent pointer-events-none" />
                   
                   {/* Floating Badges on Banner */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
-                    <span className="text-[9px] font-mono font-bold bg-black/60 backdrop-blur-md text-white/80 border border-white/15 px-2.5 py-1 rounded-full uppercase tracking-widest">
+                  <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between z-10">
+                    <span className="text-[9px] font-mono font-bold bg-black/70 backdrop-blur-md text-white/90 border border-white/15 px-2.5 py-1 rounded-full uppercase tracking-widest shadow-lg">
                       {proj.category}
                     </span>
                     <div 
-                      className="w-8 h-8 rounded-lg bg-black/60 backdrop-blur-md border border-white/15 flex items-center justify-center text-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg"
+                      className="w-8 h-8 rounded-lg bg-black/70 backdrop-blur-md border border-white/15 flex items-center justify-center text-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg"
                       style={{ '--glow': proj.bgGlow }}
                     >
                       <span className="transition-all duration-500 group-hover:drop-shadow-[0_0_8px_currentColor]">
